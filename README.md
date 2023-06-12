@@ -3,7 +3,7 @@
 <h1 align="center">Para rodar localmente: </h1>
 
 ```bash
-git https://github.com/V-Emanuel/Brainy_exercicio.git &&
+git clone https://github.com/V-Emanuel/Brainy_exercicio.git &&
 cd Brainy_exercicio && 
 mv .env.example .env &&
 composer install &&
@@ -11,7 +11,7 @@ php artisan serve
 ```
 <h3 align="left">Variáveis de Ambiente: </h3>
 
-As variáveis de ambiente abaixo devem ser alteradas de acorco com as configurações do seu banco de dados no arquivo .env: <br>
+As variáveis de ambiente abaixo devem ser alteradas de acordo com as configurações do seu banco de dados no arquivo .env: <br>
 ```.env
 DB_HOST=127.0.0.1
 DB_PORT=3306
