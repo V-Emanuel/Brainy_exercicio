@@ -17,7 +17,7 @@ return new class extends Migration {
             $table->bigIncrements('id')->unsigned();
             $table->unsignedBigInteger('estadoId');
             $table->foreign('estadoId')->references('id')->on('estados');
-            $table->string('cidade');
+            $table->string('cidade', 30);
             $table->timestamps();
         });
     }

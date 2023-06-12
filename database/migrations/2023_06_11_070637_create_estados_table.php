@@ -15,7 +15,7 @@ return new class extends Migration {
         Schema::create('estados', function (Blueprint $table) {
             $table->bigIncrements('id')->unsigned();
             $table->string('estado', 30);
-            $table->string('UF');
+            $table->string('UF', 2);
             $table->timestamps();
         });
     }
