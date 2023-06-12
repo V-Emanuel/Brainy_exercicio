@@ -23,7 +23,7 @@ DB_PASSWORD=senha
 
 <h3 align="left">Populando o banco de dados: </h3>
 
-O comando abaixo roda as migrations para criar as tabelas do banco de dados e em seguida o seed para preenchê-las:<br>
+Os comandos abaixo rodam as migrations para criar as tabelas do banco de dados e em seguida o seed para preenchê-las:<br>
 ```bash
-   php artisan migrate &&   php artisan db:seed
-```
+php artisan migrate && php artisan db:seed
+``
