@@ -4,7 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     /**
      * Run the database seeds.
      *
@@ -17,8 +18,10 @@ return new class extends Migration {
             $table->bigIncrements('id')->unsigned();
             $table->string('nome', 50);
             $table->string('email')->unique();
-            $table->unsignedBigInteger('cidadeId', );
+            $table->unsignedBigInteger('cidadeId');
+            $table->unsignedBigInteger('hobbieId');
             $table->foreign('cidadeId')->references('id')->on('cidades');
+            $table->foreign('hobbieId')->references('id')->on('hobbies');
             $table->timestamps();
         });
     }
