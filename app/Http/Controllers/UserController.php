@@ -47,5 +47,14 @@ class UserController extends Controller
         dd($request->all());
 
     }
+    public function delete($id)
+    {
+        if (!$user = Usuario::find($id)) {
+            return redirect()->route('index');
+        }
+        $user->delete();
+        return view('user.allUsers');
+        
+    }
 
 }

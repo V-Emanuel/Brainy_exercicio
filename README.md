@@ -26,4 +26,6 @@ DB_PASSWORD=senha
 Os comandos abaixo rodam as migrations para criar as tabelas do banco de dados e em seguida o seed para preenchê-las:<br>
 ```bash
 php artisan migrate && php artisan db:seed
-``
+```
+<h3 align="left">Estrutura do banco de dados: </h3>
+<img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 70%/>

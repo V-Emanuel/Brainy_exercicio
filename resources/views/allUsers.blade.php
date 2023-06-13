@@ -114,8 +114,8 @@
                 <h4>Cidade:</h4>
                 <h6>{{ $u->cidadeId }}</h6>
                 <span>
-                    <a class="put" href="{{ url('user/edit', $u->id) }}">Atualizar</a>
-                    <a class="delete">Deletar</a>
+                    <a class="put" href="{{ route('user.edit', $u->id) }}">Atualizar</a>
+                    <a class="delete" href="{{ route('user.delete', $u->id) }}">Deletar</a>
                 </span>
             </div>
         @endforeach
