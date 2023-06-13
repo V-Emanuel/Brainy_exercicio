@@ -1,14 +1,20 @@
 <?php
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Models\Usuario;
 
 Route::view('/', "/welcome");
-Route::view('/teste', "/teste");
-Route::post('/cadastro', function (Request $request) {
-    Usuario::create([
-        'nome'
-    ]);
-    dd($request -> all());
+/*Route::post('/cadastro', function (Request $request) {
+Usuario::create([
+'nome',
+]);
+dd($request->all());
+});
+ */
+Route::group([
+    'prefix' => 'user',
+    'as' => 'user.',
+], function () {
+    Route::get('/register', [UserController::class, 'index']);
+    // Route::post('/register', [UserController::class, 'createUser']);
 });
