@@ -20,18 +20,13 @@ class UserController extends Controller
     }
     public function create(Request $request)
     {
-        $createUser = Usuario::create([
-            'nome' => $request->nome,
-            'email' => $request->email,
-            'cidadeId' => $request->cidades,
-            'hobbieId' => $request->hobbies,
-        ]);
-
-        return view('/', compact('createUser'));
+        $user = Usuario::create($request->all());
+        return view('newUser', compact('user'));
     }
     public function getAllUsers()
     {
         $usuarios = Usuario::all();
-        return view('/allUsers', compact('usuarios'));
+        return view('allUsers', compact('usuarios'));
     }
+
 }

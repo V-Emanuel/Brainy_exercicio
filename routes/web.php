@@ -9,7 +9,7 @@ Route::group([
     'as' => 'user.',
 ], function () {
     Route::get('/register', [UserController::class, 'index']);
-    Route::post('/createUser', [UserController::class, 'create'])->name('createUser');
-    Route::get('/createdUser', [UserController::class, 'create'])->name('createUser');
+    Route::post('/register', [UserController::class, 'create']);
+    Route::view('newUser', '/newUser')->name('newUser');
     Route::get('/allUsers', [UserController::class, 'getAllUsers'])->name('allUsers');
 });

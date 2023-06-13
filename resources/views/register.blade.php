@@ -71,7 +71,7 @@
 
 <body>
     <h2>Cadastrar novo usuário</h2>
-    <form action="{{ url('createUser') }}" method="POST">
+    <form action="{{ url('user/register') }}" method="POST">
         @csrf
         <label for="">Nome:</label>
         <input placeholder="digite seu nome" name="nome" required type="text">
@@ -81,7 +81,7 @@
         <input placeholder="digite seu email" name="email" required type="email">
         <br />
         <h4>Hobbies:</h4>
-        <select name="hobbies" id="hobbieId">
+        <select name="hobbieId" id="">
             @foreach ($hobbies as $hobbie)
                 <option value="{{ $hobbie->id }}" @required(true)>{{ $hobbie->hobbie }} </option>
             @endforeach
@@ -94,11 +94,11 @@
         </select>
         <h4>Cidade:</h4>
         <label for="">
-            <select name="cidades" id="cidadeId">
+            <select name="cidadeId" id="cidadeId">
             </select>
         </label>
         <br />
-        <button>
+        <button href="{{ url('/user/allUsers') }}">
             <p>CADASTRAR</p>
         </button>
     </form>

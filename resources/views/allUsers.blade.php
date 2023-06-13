@@ -68,6 +68,23 @@
             transition: background-color 0.3s ease;
         }
 
+        a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+            width: 250px;
+            height: 60px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #4CAF50;
+            border-radius: 4px;
+            cursor: pointer;
+            position: fixed;
+            bottom: 20px;
+        }
+
         button:hover {
             background-color: #3367d6;
         }
@@ -101,6 +118,7 @@
                 </span>
             </div>
         @endforeach
+        <a href="{{ url('/user/register') }}">Cadastrar Novo Usuário</a>
     </div>
 
 </body>
