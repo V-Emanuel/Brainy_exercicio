@@ -7,14 +7,14 @@
     <title>Brainy Digital - CRUD</title>
     <style>
         body {
-            background-color: #b4d7dd;
+            background-color: #f1f1f1;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
         }
 
         h2 {
-            color: #1e5946;
+            color: #000;
             text-align: center;
         }
 
@@ -22,7 +22,7 @@
             max-width: 400px;
             margin: 20px auto;
             padding: 20px;
-            background-color: #e8f6ec;
+            background-color: #fff;
             border-radius: 5px;
         }
 
@@ -34,7 +34,7 @@
         label {
             display: block;
             font-weight: bold;
-            color: #1e5946;
+            color: #777;
             margin-bottom: 5px;
         }
 
@@ -46,15 +46,15 @@
             border: none;
             border-radius: 3px;
             margin-bottom: 10px;
-            color: #fff;
-            background-color: #1e5946;
+            color: #000;
+            background-color: #b4d7dd;
             font-size: 16px;
         }
 
         button {
             display: block;
             margin-top: 10px;
-            background-color: #112a1d;
+            background-color: #4285f4;
             border: none;
             border-radius: 3px;
             padding: 10px 20px;
@@ -64,15 +64,16 @@
         }
 
         button:hover {
-            background-color: #238a63;
+            background-color: #428aff;
         }
     </style>
 
 </head>
 
 <body>
-    <h2>Atualizar Usuário {{$user->nome}}</h2>
-    <form action="{{ url('user/edit') }}" method="PUT">
+    <h2>Atualizar Usuário {{ $user->nome }}</h2>
+    <form action="{{ route('user.update', $user->id) }}" method="post">
+        @method('PUT')
         @csrf
         <label for="">Nome:</label>
         <input placeholder="digite seu nome" name="nome" required type="text">
@@ -99,8 +100,8 @@
             </select>
         </label>
         <br />
-        <button href="{{ url('/user/allUsers') }}">
-            <p>CADASTRAR</p>
+        <button type="submit">
+            <p>Atualizar</p>
         </button>
     </form>
     <script>

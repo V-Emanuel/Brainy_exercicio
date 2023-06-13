@@ -44,9 +44,14 @@ class UserController extends Controller
         if (!$user = Usuario::find($id)) {
             return redirect()->route('index');
         }
-        dd($request->all());
-
+        $user->update($request->all());
+        return view('updatedUser', compact('user'));
     }
+
+
+
+
+
     public function delete($id)
     {
         if (!$user = Usuario::find($id)) {
@@ -54,7 +59,7 @@ class UserController extends Controller
         }
         $user->delete();
         return view('user.allUsers');
-        
+
     }
 
 }

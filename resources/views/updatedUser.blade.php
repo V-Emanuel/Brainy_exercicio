@@ -53,6 +53,25 @@
             margin-top: 20px;
         }
 
+        button {
+            font-size: 14px;
+            padding: 8px 16px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: #fff;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        button.delete {
+            background-color: #f44336;
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
         a {
             display: flex;
             align-items: center;
@@ -67,13 +86,12 @@
             border-radius: 4px;
             cursor: pointer;
             margin-right: 20px;
-            text-decoration-line: none;
         }
     </style>
 </head>
 
 <body>
-    <h1>Usuário Cadastrado com sucesso</h1>
+    <h1>Usuário atualizado com sucesso!</h1>
     <span>
         <div class="user">
             <h4>Nome:</h4>
@@ -84,6 +102,10 @@
             <h6>{{ $user->hobbieId }}</h6>
             <h4>Cidade:</h4>
             <h6>{{ $user->cidadeId }}</h6>
+            <span>
+                <button>Atualizar</button>
+                <button class="delete">Deletar</button>
+            </span>
         </div>
     </span>
 
