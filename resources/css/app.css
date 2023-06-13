@@ -29,16 +29,20 @@ input[type="text"],
 select {
     display: block;
     width: 100%;
+    height: 40px;
     padding: 8px;
-    border: 1px solid #1e5946;
+    border: none;
     border-radius: 3px;
     margin-bottom: 10px;
+    color: #fff;
+    background-color: #1e5946;
+    font-size: 16px;
 }
 
 button {
     display: block;
     margin-top: 10px;
-    background-color: #1e5946;
+    background-color: #112a1d;
     border: none;
     border-radius: 3px;
     padding: 10px 20px;

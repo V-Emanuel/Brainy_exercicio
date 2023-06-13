@@ -16,7 +16,7 @@ return new class extends Migration {
 
             $table->bigIncrements('id')->unsigned();
             $table->string('nome', 50);
-            $table->string('email');
+            $table->string('email')->unique();
             $table->unsignedBigInteger('cidadeId', );
             $table->foreign('cidadeId')->references('id')->on('cidades');
             $table->timestamps();
