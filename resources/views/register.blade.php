@@ -72,7 +72,7 @@
 
 <body>
     <h2>Cadastrar novo usuário</h2>
-    <form action="{{ url('user/register') }}" method="POST">
+    <form action="{{ route('user.register') }}" method="POST">
         @csrf
         <label for="">Nome:</label>
         <input placeholder="digite seu nome" name="nome" required type="text">
@@ -99,7 +99,7 @@
             </select>
         </label>
         <br />
-        <button href="{{ url('/user/allUsers') }}">
+        <button type="submit">
             <p>CADASTRAR</p>
         </button>
     </form>

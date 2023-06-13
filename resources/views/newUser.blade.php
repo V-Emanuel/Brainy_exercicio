@@ -110,8 +110,8 @@
     </span>
 
     <span>
-        <a href="{{ url('/user/register') }}">Cadastrar Novo Usuário</a>
-        <a href="{{ url('/user/allUsers') }}">Listar todos os usuários</a>
+        <a href="{{ route('user.register') }}">Cadastrar Novo Usuário</a>
+        <a href="{{ route('user.allUsers') }}">Listar todos os usuários</a>
     </span>
 </body>
 

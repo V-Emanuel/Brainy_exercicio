@@ -28,4 +28,4 @@ Os comandos abaixo rodam as migrations para criar as tabelas do banco de dados e
 php artisan migrate && php artisan db:seed
 ```
 <h3 align="left">Estrutura do banco de dados: </h3>
-<img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 70%/>
+<img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 90%/>
