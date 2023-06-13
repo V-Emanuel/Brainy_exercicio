@@ -28,5 +28,24 @@ class UserController extends Controller
         $usuarios = Usuario::all();
         return view('allUsers', compact('usuarios'));
     }
+    public function edit($id)
+    {
+        $hobbies = Hobbie::all();
+        $estados = Estado::all();
+        $cidades = Cidade::all();
+        if (!$user = Usuario::find($id)) {
+            return redirect()->route('index');
+        }
+        return view('/edit', compact('user', 'hobbies', 'estados', 'cidades'));
+
+    }
+    public function update(Request $request, $id)
+    {
+        if (!$user = Usuario::find($id)) {
+            return redirect()->route('index');
+        }
+        dd($request->all());
+
+    }
 
 }

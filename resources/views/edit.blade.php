@@ -71,8 +71,8 @@
 </head>
 
 <body>
-    <h2>Cadastrar novo usuário</h2>
-    <form action="{{ url('user/register') }}" method="POST">
+    <h2>Atualizar Usuário {{$user->nome}}</h2>
+    <form action="{{ url('user/edit') }}" method="PUT">
         @csrf
         <label for="">Nome:</label>
         <input placeholder="digite seu nome" name="nome" required type="text">

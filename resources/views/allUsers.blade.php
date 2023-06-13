@@ -56,7 +56,8 @@
             margin-top: 15px;
         }
 
-        button {
+        .put,
+        .delete {
             padding: 8px 16px;
             font-size: 14px;
             font-weight: bold;
@@ -66,9 +67,10 @@
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s ease;
+            text-decoration-line: none;
         }
 
-        a {
+        .register {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -81,8 +83,7 @@
             background-color: #4CAF50;
             border-radius: 4px;
             cursor: pointer;
-            position: fixed;
-            bottom: 20px;
+            text-decoration-line:
         }
 
         button:hover {
@@ -113,13 +114,14 @@
                 <h4>Cidade:</h4>
                 <h6>{{ $u->cidadeId }}</h6>
                 <span>
-                    <button>Atualizar</button>
-                    <button class="delete">Deletar</button>
+                    <a class="put" href="{{ url('user/edit', $u->id) }}">Atualizar</a>
+                    <a class="delete">Deletar</a>
                 </span>
             </div>
         @endforeach
-        <a href="{{ url('/user/register') }}">Cadastrar Novo Usuário</a>
+
     </div>
+    <a class="register" href="{{ url('/user/register') }}">Cadastrar Novo Usuário</a>
 
 </body>
 

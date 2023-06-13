@@ -31,6 +31,7 @@
         background-color: #4CAF50;
         border-radius: 4px;
         cursor: pointer;
+        text-decoration-line: none;
     }
 
     a:hover {

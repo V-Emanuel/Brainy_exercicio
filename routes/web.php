@@ -8,8 +8,9 @@ Route::group([
     'prefix' => 'user',
     'as' => 'user.',
 ], function () {
-    Route::get('/register', [UserController::class, 'index']);
+    Route::put('/edit/{id}', [UserController::class, 'update'])->name('putUser');
+    Route::get('/edit/{id}', [UserController::class, 'edit'])->name('edit');
     Route::post('/register', [UserController::class, 'create']);
-    Route::view('newUser', '/newUser')->name('newUser');
+    Route::get('/register', [UserController::class, 'index']);
     Route::get('/allUsers', [UserController::class, 'getAllUsers'])->name('allUsers');
 });
