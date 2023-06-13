@@ -38,7 +38,6 @@
             margin-bottom: 5px;
         }
 
-        input[type="text"],
         select {
             display: block;
             width: 100%;
@@ -72,30 +71,29 @@
 
 <body>
     <h2>Cadastrar novo usuário</h2>
-    <form action="/cadastro" method="POST">
+    <form action="{{ url('createUser') }}" method="POST">
         @csrf
         <label for="">Nome:</label>
-        <input placeholder="digite seu nome" name="nome">
+        <input placeholder="digite seu nome" name="nome" required type="text">
         <br />
         <br />
         <label for="">Email:</label>
-        <input placeholder="digite seu email" name="email">
+        <input placeholder="digite seu email" name="email" required type="email">
         <br />
         <h4>Hobbies:</h4>
-        <select name="hobbie" id="hobbie">
+        <select name="hobbies" id="hobbieId">
             @foreach ($hobbies as $hobbie)
-                <option value="{{ $hobbie->id }}">{{ $hobbie->hobbie }}</option>
+                <option value="{{ $hobbie->id }}" @required(true)>{{ $hobbie->hobbie }} </option>
             @endforeach
         </select>
         <h4>Estado:</h4>
         <select name="estado" id="estadoId" onchange="selecionaEstado()">
             @foreach ($estados as $estado)
-                <option value="{{ $estado->id }}">{{ $estado->estado }}</option>
+                <option value="{{ $estado->id }}" @required(true)>{{ $estado->estado }}</option>
             @endforeach
         </select>
         <h4>Cidade:</h4>
         <label for="">
-            Cidade:
             <select name="cidades" id="cidadeId">
             </select>
         </label>
@@ -120,6 +118,7 @@
                 const option = document.createElement('option');
                 option.value = cidade.id;
                 option.text = cidade.cidade;
+                option.required = true;
                 fragment.appendChild(option);
             }
 
