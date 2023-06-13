@@ -27,9 +27,7 @@ class UserController extends Controller
             'hobbieId' => $request->hobbies,
         ]);
 
-        return view('/user', [
-            'createUser' => $$createUser,
-        ]);
+        return view('/', compact('createUser'));
     }
     public function getAllUsers()
     {
