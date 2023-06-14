@@ -40,7 +40,7 @@
         h4 {
             font-size: 16px;
             font-weight: bold;
-            color: #555;
+            color: #000;
             margin: 0;
         }
 
@@ -83,7 +83,7 @@
             background-color: #4CAF50;
             border-radius: 4px;
             cursor: pointer;
-            text-decoration-line:
+            text-decoration-line:none;
         }
 
         button:hover {
@@ -118,14 +118,9 @@
                 <h4>Cidade:</h4>
                 @foreach ($cidades as $c)
                     @if ($u->cidadeId === $c->id)
-                        @foreach ($estados as $e)
-                            @if ($c->estadoId === $e->id)
-                                <h6>{{ $c->cidade }} - {{ $e - UF }}</h6>
-                            @endif
-                        @endforeach
+                        <h6>{{ $c->cidade }} </h6>
                     @endif
                 @endforeach
-
                 <span>
                     <a class="put" href="{{ route('user.edit', $u->id) }}">Atualizar</a>
                     <a class="delete" href="{{ route('user.beforeDelete', $u->id) }}">Deletar</a>

@@ -20,15 +20,18 @@ class UserController extends Controller
     }
     public function create(Request $request)
     {
+        $hobbies = Hobbie::all();
+        $cidades = Cidade::all();
         $user = Usuario::create($request->all());
-        return view('newUser', compact('user'));
+        return view('newUser', compact('user', 'hobbies', 'cidades'));
     }
     public function getAllUsers()
     {
         $cidades = Cidade::all();
-        $hobbies= Hobbie::All();
+        $estados = Estado::all();
+        $hobbies = Hobbie::All();
         $usuarios = Usuario::all();
-        return view('allUsers', compact('usuarios','hobbies', 'cidades'));
+        return view('allUsers', compact('usuarios', 'hobbies', 'cidades'));
     }
     public function edit($id)
     {
@@ -43,19 +46,23 @@ class UserController extends Controller
     }
     public function update(Request $request, $id)
     {
+        $hobbies = Hobbie::all();
+        $cidades = Cidade::all();
         if (!$user = Usuario::find($id)) {
             return redirect()->route('index');
         }
         $user->update($request->all());
-        return view('updatedUser', compact('user'));
+        return view('updatedUser', compact('user', 'hobbies', 'cidades'));
     }
 
     public function beforeDelete($id)
     {
+        $hobbies = Hobbie::all();
+        $cidades = Cidade::all();
         if (!$user = Usuario::find($id)) {
             return redirect()->route('index');
         }
-        return view('/delete', compact('user'));
+        return view('/delete', compact('user', 'hobbies', 'cidades'));
 
     }
 

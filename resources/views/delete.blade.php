@@ -84,6 +84,7 @@
             border-radius: 5px;
             cursor: pointer;
             margin-right: 20px;
+            text-decoration-line: none;
         }
     </style>
 </head>
@@ -97,9 +98,17 @@
             <h4>Email:</h4>
             <h6>{{ $user->email }}</h6>
             <h4>Hobbie:</h4>
-            <h6>{{ $user->hobbieId }}</h6>
+            @foreach ($hobbies as $h)
+                @if ($user->hobbieId === $h->id)
+                    <h6>{{ $h->hobbie }}</h6>
+                @endif
+            @endforeach
             <h4>Cidade:</h4>
-            <h6>{{ $user->cidadeId }}</h6>
+            @foreach ($cidades as $c)
+                @if ($user->cidadeId === $c->id)
+                    <h6>{{ $c->cidade }} </h6>
+                @endif
+            @endforeach
         </div>
     </span>
     <form action="{{ route('user.delete', $user->id) }}" method="POST">
@@ -111,7 +120,7 @@
     </form>
     <span>
         <a href="{{ route('user.allUsers') }}">
-            Voltar para a página de unuários
+            Voltar para a página de usuários
         </a>
     </span>
 

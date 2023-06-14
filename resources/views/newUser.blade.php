@@ -73,7 +73,7 @@
 </head>
 
 <body>
-    <h1>Usuário Cadastrado com sucesso</h1>
+    <h1>Usuário {{ $user->nome }} Cadastrado com sucesso</h1>
     <span>
         <div class="user">
             <h4>Nome:</h4>
@@ -81,9 +81,17 @@
             <h4>Email:</h4>
             <h6>{{ $user->email }}</h6>
             <h4>Hobbie:</h4>
-            <h6>{{ $user->hobbieId }}</h6>
+            @foreach ($hobbies as $h)
+                @if ($user->hobbieId === $h->id)
+                    <h6>{{ $h->hobbie }}</h6>
+                @endif
+            @endforeach
             <h4>Cidade:</h4>
-            <h6>{{ $user->cidadeId }}</h6>
+            @foreach ($cidades as $c)
+                @if ($user->cidadeId === $c->id)
+                    <h6>{{ $c->cidade }} </h6>
+                @endif
+            @endforeach
         </div>
     </span>
 
