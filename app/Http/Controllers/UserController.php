@@ -25,8 +25,10 @@ class UserController extends Controller
     }
     public function getAllUsers()
     {
+        $cidades = Cidade::all();
+        $hobbies= Hobbie::All();
         $usuarios = Usuario::all();
-        return view('allUsers', compact('usuarios'));
+        return view('allUsers', compact('usuarios','hobbies', 'cidades'));
     }
     public function edit($id)
     {

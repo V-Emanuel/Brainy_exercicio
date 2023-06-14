@@ -110,9 +110,22 @@
                 <h4>Email:</h4>
                 <h6>{{ $u->email }}</h6>
                 <h4>Hobbie:</h4>
-                <h6>{{ $u->hobbieId }}</h6>
+                @foreach ($hobbies as $h)
+                    @if ($u->hobbieId === $h->id)
+                        <h6>{{ $h->hobbie }}</h6>
+                    @endif
+                @endforeach
                 <h4>Cidade:</h4>
-                <h6>{{ $u->cidadeId }}</h6>
+                @foreach ($cidades as $c)
+                    @if ($u->cidadeId === $c->id)
+                        @foreach ($estados as $e)
+                            @if ($c->estadoId === $e->id)
+                                <h6>{{ $c->cidade }} - {{ $e - UF }}</h6>
+                            @endif
+                        @endforeach
+                    @endif
+                @endforeach
+
                 <span>
                     <a class="put" href="{{ route('user.edit', $u->id) }}">Atualizar</a>
                     <a class="delete" href="{{ route('user.beforeDelete', $u->id) }}">Deletar</a>
@@ -122,7 +135,7 @@
 
     </div>
     <a class="register" href="{{ url('/register') }}">Cadastrar Novo Usuário</a>
-
+    <script></script>
 </body>
 
 </html>
