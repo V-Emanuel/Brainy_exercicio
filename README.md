@@ -2,11 +2,11 @@
 <h3 align="left">Objetivo do projeto: </h3>
 <details>
 <summary>Expandir Texto</summary>
-<p>O projeto visa desenvolver um CRUD simples com o framework Laravel e o banco de dados MySQL. No final da página é possível ver a estrutura do banco de dados e da tabelas. As rotas incluem cadastro, atualização, listagem e remorção dos usuários cadastrados com confirmação. Para se guiar pelas rotas, foi feita uma leve estilização das páginas para que seja perceptível onde seguir com os comandos desejados</p>
+<p>O projeto visa desenvolver um CRUD simples com o framework Laravel e o banco de dados MySQL. No final da página é possível ver a estrutura do banco de dados e das tabelas. As rotas incluem cadastro, atualização, listagem e remoção dos usuários cadastrados com confirmação. Para se guiar pelas rotas, foi feita uma leve estilização das páginas para que seja perceptível onde seguir com os comandos desejados</p>
 </details>
 
 <h3 align="center">Para rodar localmente: </h1>
-<h6>É necessário ter instalada a versão 8.1 do laravel, o composer e o MySQL</h6>
+<h5>É necessário ter instalada a versão 8.1 do laravel, o composer e o MySQL</h5>
 
 ```bash
 git clone https://github.com/V-Emanuel/Brainy_exercicio.git &&
@@ -38,4 +38,4 @@ php artisan migrate && php artisan db:seed
 ```
 
 <h3 align="left">Estrutura do banco de dados: </h3>
-<img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 90%/>
+<img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 100%/>
