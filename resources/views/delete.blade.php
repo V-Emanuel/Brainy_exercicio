@@ -52,11 +52,12 @@
             justify-content: center;
             margin-top: 20px;
         }
-        form{
+
+        form {
             display: flex;
             justify-content: center;
             width: 100vw;
-            margin-top: 30px; 
+            margin-top: 30px;
         }
 
         button.delete {
@@ -67,6 +68,7 @@
             opacity: 0.8;
         }
 
+        a,
         button {
             display: flex;
             align-items: center;
@@ -106,10 +108,13 @@
         <button type="submit" class="delete">
             <p>Deletar Usuário</p>
         </button>
-        <button href="{{ route('user.allUsers') }}">
-            Voltar para a página de unuários
-        </button>
     </form>
+    <span>
+        <a href="{{ route('user.allUsers') }}">
+            Voltar para a página de unuários
+        </a>
+    </span>
+
 </body>
 
 </html>

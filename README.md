@@ -4,14 +4,17 @@
 
 ```bash
 git clone https://github.com/V-Emanuel/Brainy_exercicio.git &&
-cd Brainy_exercicio && 
+cd Brainy_exercicio &&
 mv .env.example .env &&
 composer install &&
+php artisan key:generate &&
 php artisan serve
 ```
+
 <h3 align="left">Variáveis de Ambiente: </h3>
 
 As variáveis de ambiente abaixo devem ser alteradas de acordo com as configurações do seu banco de dados no arquivo .env: <br>
+
 ```.env
 DB_HOST=127.0.0.1
 DB_PORT=3306
@@ -20,12 +23,13 @@ DB_USERNAME=usuario
 DB_PASSWORD=senha
 ```
 
-
 <h3 align="left">Populando o banco de dados: </h3>
 
 Os comandos abaixo rodam as migrations para criar as tabelas do banco de dados e em seguida o seed para preenchê-las:<br>
+
 ```bash
 php artisan migrate && php artisan db:seed
 ```
+
 <h3 align="left">Estrutura do banco de dados: </h3>
 <img src="/resources/assets/imgs/BrainyDbDesigner.png" width = 90%/>
