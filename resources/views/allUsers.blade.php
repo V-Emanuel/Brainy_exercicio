@@ -115,13 +115,13 @@
                 <h6>{{ $u->cidadeId }}</h6>
                 <span>
                     <a class="put" href="{{ route('user.edit', $u->id) }}">Atualizar</a>
-                    <a class="delete" href="{{ route('user.delete', $u->id) }}">Deletar</a>
+                    <a class="delete" href="{{ route('user.beforeDelete', $u->id) }}">Deletar</a>
                 </span>
             </div>
         @endforeach
 
     </div>
-    <a class="register" href="{{ url('/user/register') }}">Cadastrar Novo Usuário</a>
+    <a class="register" href="{{ url('/register') }}">Cadastrar Novo Usuário</a>
 
 </body>
 

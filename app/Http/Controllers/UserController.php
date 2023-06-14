@@ -48,17 +48,22 @@ class UserController extends Controller
         return view('updatedUser', compact('user'));
     }
 
+    public function beforeDelete($id)
+    {
+        if (!$user = Usuario::find($id)) {
+            return redirect()->route('index');
+        }
+        return view('/delete', compact('user'));
 
+    }
 
-
-
-    public function delete($id)
+    public function deleteUser($id)
     {
         if (!$user = Usuario::find($id)) {
             return redirect()->route('index');
         }
         $user->delete();
-        return view('user.allUsers');
+        return view('deletedUser');
 
     }
 

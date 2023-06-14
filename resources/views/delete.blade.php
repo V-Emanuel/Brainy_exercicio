@@ -52,16 +52,11 @@
             justify-content: center;
             margin-top: 20px;
         }
-
-        button {
-            font-size: 14px;
-            padding: 8px 16px;
-            border: none;
-            border-radius: 5px;
-            background-color: #4CAF50;
-            color: #fff;
-            cursor: pointer;
-            margin-right: 10px;
+        form{
+            display: flex;
+            justify-content: center;
+            width: 100vw;
+            margin-top: 30px; 
         }
 
         button.delete {
@@ -72,7 +67,7 @@
             opacity: 0.8;
         }
 
-        a {
+        button {
             display: flex;
             align-items: center;
             justify-content: center;
@@ -83,7 +78,8 @@
             font-size: 16px;
             color: #fff;
             background-color: #4CAF50;
-            border-radius: 4px;
+            border: none;
+            border-radius: 5px;
             cursor: pointer;
             margin-right: 20px;
         }
@@ -91,7 +87,7 @@
 </head>
 
 <body>
-    <h1>Usuário atualizado com sucesso!</h1>
+    <h1>Tem certeza que deseja deletar o usuário abaixo?</h1>
     <span>
         <div class="user">
             <h4>Nome:</h4>
@@ -104,11 +100,16 @@
             <h6>{{ $user->cidadeId }}</h6>
         </div>
     </span>
-
-    <span>
-        <a href="{{ route('user.register') }}">Cadastrar Novo Usuário</a>
-        <a href="{{ route('user.allUsers') }}">Listar todos os usuários</a>
-    </span>
+    <form action="{{ route('user.delete', $user->id) }}" method="POST">
+        @method('DELETE')
+        @csrf
+        <button type="submit" class="delete">
+            <p>Deletar Usuário</p>
+        </button>
+        <button href="{{ route('user.allUsers') }}">
+            Voltar para a página de unuários
+        </button>
+    </form>
 </body>
 
 </html>
